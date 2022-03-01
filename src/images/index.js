@@ -1,0 +1,10 @@
+export { default as Background1 } from "./background1.jpg";
+export { default as Background2 } from "./background2.jpg";
+export { default as Background3 } from "./background3.jpg";
+export { default as Background4 } from "./background4.jpg";
+export { default as Background5 } from "./background5.jpg";
+export { default as BlackLogo } from "./flowers.png";
+export { default as Signature } from "./Signature.png";
+export { default as Logo } from "./Logo.png";
+export { default as jewelryMaking } from "./jewelryMaking.jpeg";
+export { default as TestimonialBg } from "./testimonialsBg.jpeg";

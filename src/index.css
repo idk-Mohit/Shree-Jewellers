@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap");
+:root {
+  --bg-gray: rgba(200, 200, 200, 1);
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+hr,
+h4,
+h5,
+h6,
+p {
+  font-weight: 200;
+}
+
+span {
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.small-logo {
+  width: 4rem;
+}
+
+input {
+  padding: 1.5rem;
+  background-color: transparent;
+  border: 1px solid rgba(200, 200, 200, 0.2);
+  border-radius: none;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+::placeholder {
+  color: white;
+}
+
+hr {
+  width: 12rem;
+  margin: 2rem 0;
+  height: 1px;
+  border: 0.2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+/* Carousel */
+
+.slick-slider {
+  /* background: rgba(0, 0, 0, 0.4) !important; */
+  z-index: 1000 !important;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.slick-dots .dots-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 3rem;
+  height: 10rem;
+  justify-content: space-around;
+}
+.carousel_number {
+  position: relative;
+  width: 4rem;
+  text-align: left;
+  color: rgba(200, 200, 200, 0.5);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.slick-active .carousel_number {
+  color: white !important;
+  font-weight: 600;
+  transform: scale(1.1);
+}
+
+.slick-active div .carousel-line {
+  display: block;
+}
+
+.carousel_number .carousel-line {
+  display: none;
+}
+
+.carousel_number hr {
+  width: 3rem;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  margin: 0;
+}
