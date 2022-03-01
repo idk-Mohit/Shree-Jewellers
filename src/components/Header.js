@@ -6,7 +6,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header = () => {
   const [burgerStatus, setBurgerStatus] = useState(false);
-  const [cartItem, setcartItem] = useState(0);
   return (
     <Nav>
       <Contact>
@@ -17,7 +16,7 @@ const Header = () => {
       </NavLink>
       <UserSection>
         <CartIcon />
-        <CartButton className="header_button">CART ( {cartItem} )</CartButton>
+        <CartButton className="header_button">CART ( 0 )</CartButton>
         <CustomMenu onClick={() => setBurgerStatus(true)}></CustomMenu>
         <BurgerMenu show={burgerStatus}>
           <CloseMenu onClick={() => setBurgerStatus(false)}></CloseMenu>

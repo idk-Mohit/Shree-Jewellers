@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { SwipeCarousel, Showcase } from "../components";
 
 const About = () => {
   return (

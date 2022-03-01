@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { BlackLogo, Signature } from "../images/index";
+import { BlackLogo } from "../images/index";
 import styled from "styled-components";
 
 const Showcase = ({ image, title, link, btn, price }) => {
