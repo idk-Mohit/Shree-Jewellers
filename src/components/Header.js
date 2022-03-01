@@ -165,7 +165,7 @@ const BurgerMenu = styled.div`
   background-image: linear-gradient(
     to left,
     rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.04)
+    rgba(0, 0, 0, 0.2)
   );
   width: 400px;
   display: flex;
@@ -179,8 +179,8 @@ const BurgerMenu = styled.div`
     transition: 300ms;
     cursor: pointer;
     border-radius: 10px;
-    margin: 1rem 0;
-    padding: 0 1.5rem;
+    margin: .5rem 0;
+    padding: .5rem 2rem;
     :hover {
       background-color: rgba(255, 255, 255, 0.2);
       transition: 300ms ease-out;
@@ -191,7 +191,9 @@ const BurgerMenu = styled.div`
     padding: 0.7rem 0;
     display: inline-block;
     width: 100%;
+    font-size:1rem;
     box-sizing: border-box;
+    font-weight:200;
   }
   .MuiSvgIcon-root {
     fill: white;

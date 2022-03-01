@@ -3,32 +3,43 @@ import { NavLink } from "react-router-dom";
 import { BlackLogo } from "../images/index";
 import styled from "styled-components";
 
-const Showcase = ({ image, title, link, btn, price }) => {
+const Showcase = (props) => {
   return (
-    <div>
-      <ShowCase>
-        <div>
-          {image ? <Image src={image} alt="diamond ring" /> : ""}
-          <img className="small-logo" src={BlackLogo} alt="logo" />
-          <h3>{title}</h3>
-          {price ? <span>${price}</span> : ""}
-          <hr />
-          <NavLink to={`/${link}`}>
-            <span>{btn}</span>
-          </NavLink>
-        </div>
+    <ShowCaseSection>
+      <ShowCase className="container">
+        {props.data.map((item, index) => {
+          return (
+            <div key={index}>
+              {item.image ? <Image src={item.image} alt="diamond ring" /> : ""}
+              <img className="small-logo" src={BlackLogo} alt="logo" />
+              <h3>{item.title}</h3>
+              {item.price ? <span>${item.price}</span> : ""}
+              <hr />
+              <NavLink to={`/${item.link}`}>
+                <span>{item.btn}</span>
+              </NavLink>
+            </div>
+          );
+        })}
       </ShowCase>
-    </div>
+    </ShowCaseSection>
   );
 };
 
 export default Showcase;
 
+const ShowCaseSection = styled.div`
+  box-sizing: border-box;
+  padding: 6rem 0;
+  background-color: rgba(170, 168, 168, 0.1);
+  width:100%;
+`;
+
 const ShowCase = styled.div`
   display: flex;
   box-sizing: border-box;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   div {
     display: flex;
     flex-direction: column;
