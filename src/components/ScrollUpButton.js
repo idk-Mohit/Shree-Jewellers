@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Button } from "./index";
 import EjectIcon from "@material-ui/icons/Eject";
 
 const ScrollUpButton = () => {
@@ -39,7 +38,7 @@ const ScrollBtn = styled.button`
   z-index: 1;
   cursor: pointer;
   border: 1px solid white;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 0.7rem 0.8rem;
   border-radius: 50px;
   transition: 300ms;
@@ -47,8 +46,8 @@ const ScrollBtn = styled.button`
   // font-size: 10px;
   width: fit-content;
   .MuiSvgIcon-root {
-    font-size:2rem;
-    fill:rgba(0,0,0,.5);
+    font-size: 2rem;
+    fill: rgba(0, 0, 0, 0.5);
   }
   &:hover {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
