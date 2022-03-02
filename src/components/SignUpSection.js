@@ -95,6 +95,15 @@ const LeftSignUpDiv = styled.div`
     margin: 1rem 0;
     input {
       margin: 0 0.5rem 0.5rem 0;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      transition: 300ms ease;
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+        transform: scale(1.02);
+        transition: 300ms ease;
+      }
     }
     button {
       margin: 0;

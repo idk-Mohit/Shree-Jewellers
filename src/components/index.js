@@ -8,3 +8,4 @@ export { default as FadeCarousel } from "./Carousel/FadeCarousel";
 export { default as SwipeCarousel } from "./Carousel/SwipeCarousel";
 export { default as Section } from "./MainSection/Section";
 export { default as SignUpSection } from "./SignUpSection";
+export { default as ScrollUpbutton } from "./ScrollUpButton";

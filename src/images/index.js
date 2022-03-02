@@ -8,3 +8,6 @@ export { default as Signature } from "./Signature.png";
 export { default as Logo } from "./Logo.png";
 export { default as jewelryMaking } from "./jewelryMaking.jpeg";
 export { default as TestimonialBg } from "./testimonialsBg.jpeg";
+export { default as diamond_earring } from "./Jewellery/diamond_earring.jpeg";
+export { default as diamond1 } from "./Jewellery/diamond1.jpeg";
+export { default as diamond2 } from "./Jewellery/diamond2.jpeg";

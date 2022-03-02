@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./components/index";
+import { Header, Footer, ScrollUpbutton } from "./components/index";
 import {
   Home,
   About,
@@ -22,6 +22,7 @@ function App() {
         <Route exact path="/Gallery" element={<Gallery />} />
       </Routes>
       <Footer />
+      <ScrollUpbutton />
     </Router>
   );
 }

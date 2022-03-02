@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Showcase,
-  Section1,
-  Button,
-} from "../components/index";
+import { Showcase, Section1, Button } from "../components/index";
 
 const Contacts = () => {
   const formSubmitHandler = (e) => {
@@ -39,7 +35,7 @@ const Contacts = () => {
       </GetInTouch>
       <Container className="container">
         <h1>Send A Message</h1>
-        <MessageForm onSubmit={formSubmitHandler}>
+        <MessageForm onSubmit={formSubmitHandler} className="container">
           <input type="name" id="name" placeholder="Name" required={true} />
           <input type="email" id="email" placeholder="E-mail" required={true} />
           <textarea
@@ -108,12 +104,21 @@ const MessageForm = styled.form`
   margin: 3rem 0 1rem;
   flex-direction: column;
   align-items: center;
-
+  max-width: 30rem;
   input,
   textarea {
     margin: 0.5rem 0;
     width: 100%;
     background-color: transparent;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms;
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+      transform: scale(1.02);
+      transition: 300ms;
+    }
   }
   .checkbox_label {
     margin-top: 1rem;
