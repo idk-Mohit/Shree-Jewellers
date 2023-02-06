@@ -21,6 +21,7 @@ const Hero = () => {
         sr.reveal(revealHeader.current, srConfig(400, "left"))
         sr.reveal(revealSpan.current, srConfig(600, "right"))
         return () => clearTimeout(timeout);
+        // eslint-disable-next-line
     }, [])
 
     if (!Array.isArray(HeroData) || HeroData.length === 0) return null;
