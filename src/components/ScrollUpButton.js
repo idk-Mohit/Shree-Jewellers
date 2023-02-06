@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import EjectIcon from "@material-ui/icons/Eject";
+import { ArrowUpCircle } from "react-feather";
 
 const ScrollUpButton = () => {
   const [visible, setVisible] = useState(false);
@@ -23,8 +23,9 @@ const ScrollUpButton = () => {
     <ScrollBtn
       onClick={scrollToTop}
       style={{ display: visible ? "inline" : "none" }}
+      className="flex"
     >
-      <EjectIcon />
+      <ArrowUpCircle className="feather scrollUp" />
     </ScrollBtn>
   );
 };
@@ -37,25 +38,27 @@ const ScrollBtn = styled.button`
   bottom: 10px;
   z-index: 1;
   cursor: pointer;
-  border: 1px solid white;
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 0.7rem 0.8rem;
-  border-radius: 50px;
-  transition: 300ms;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  // font-size: 10px;
-  width: fit-content;
-  .MuiSvgIcon-root {
-    font-size: 2rem;
-    fill: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  transition: 300ms ease;
+  
+  .scrollUp {
+    stroke: gray;
+    transition: 300ms ease;
+    width: inherit;
+    height: inherit;
   }
-  &:hover {
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
-    transition: 300ms;
-    color: black;
-    background-color: white;
-    .MuiSvgIcon-root {
-      fill: black !important;
+
+  &:hover{
+    .scrollUp{
+      transform: scale(1.3) translateY(-5px);
+      stroke: black;
+      transition: 300ms ease;
     }
   }
 `;

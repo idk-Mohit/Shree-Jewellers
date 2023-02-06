@@ -1,153 +1,83 @@
-import React from "react";
-import styled from "styled-components";
-import { Section1 } from "../components/index";
-import {
-  Background1,
-  Background2,
-  Background3,
-  Background4,
-  TestimonialBg,
-  jewelryMaking,
-  diamond1,
-  diamond2,
-  diamond_earring,
-} from "../images/index";
+import React from 'react'
+import styled from 'styled-components'
+import { SecondHero } from '../components'
+import { Portfolio } from '../Content'
 
 const Gallery = () => {
-  return (
-    <>
-      <Section1
-        bgImage={
-          "https://pabloguadi.ancorathemes.com/wp-content/uploads/2016/06/home1_slide1.jpg"
-        }
-        title="Gallery"
-        subtitle="GALLERY"
-      />
-      <Portfolio className="container">
-        <h1>Our Portfolio</h1>
-        <InnerDiv>
-          <Container>
-            <Image bgImage={Background1} />
-            <Overlay className="overlay">
-              <Text>Greatest Gifts</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={Background2} />
-            <Overlay className="overlay">
-              <Text>Beautiful Wedding Rings</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={Background3} />
-            <Overlay className="overlay">
-              <Text>Sapphires &amp; Purls</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={Background4} />
-            <Overlay className="overlay">
-              <Text>The Best Artists</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={TestimonialBg} />
-            <Overlay className="overlay">
-              <Text>Earring Design</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={jewelryMaking} />
-            <Overlay className="overlay">
-              <Text>Perfection &amp; Quality</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={diamond_earring} />
-            <Overlay className="overlay">
-              <Text>Gold &amp; Silver Combined</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={diamond1} />
-            <Overlay className="overlay">
-              <Text>Sophisticated Jewelry</Text>
-            </Overlay>
-          </Container>
-          <Container>
-            <Image bgImage={diamond2} />
-            <Overlay className="overlay">
-              <Text>Unique Materials</Text>
-            </Overlay>
-          </Container>
-        </InnerDiv>
-      </Portfolio>
-    </>
-  );
-};
+    const gallery = Portfolio.map((item, index) => (
+        <Overlay bgImage={item.image}>
+            <div className='flex text'>
+                <h3>{item.title}</h3>
+            </div>
+        </Overlay>
+    ))
+    return (
+        <Container>
+            <SecondHero title="Gallery" />
+            <h2>Portfolio</h2>
+            <Grid className='container'>
+                {gallery}
+            </Grid>
+        </Container>
+    )
+}
 
-export default Gallery;
-
-const Portfolio = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-  h1 {
-    color: black;
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
-  }
-`;
-
-const InnerDiv = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-`;
-
-const Image = styled.div`
-  width: 20rem;
-  height: 20rem;
-  background-image: ${(props) => `url(${props.bgImage})`};
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
-  display: block;
-`;
+export default Gallery
 
 const Container = styled.div`
-  position: relative;
-  // width: 50%;
-  margin: 1rem;
-  &:hover .overlay {
-    height: 100%;
-  }
-`;
+    h2{
+        text-align: center;
+        color:black;
+        font-weight: 600;
+        font-size: var(--font-heading);
+        margin: 4rem auto;
+    }
+`
+
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem auto;
+
+    @media(max-width:1024px){
+        grid-template-columns: 1fr 1fr;
+    }
+    @media(max-width:768px){
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+`
 const Overlay = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: 0.5s ease;
-  border-radius: 5px;
-`;
-const Text = styled.div`
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  text-transform: uppercase;
-`;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    max-height: 400px;
+    background-image: ${props => `url(${props.bgImage})`};
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    border-radius:4px;
+    transition:300ms ease;
+    
+    &:hover{
+        div{
+            opacity:1;
+        }
+    }
+
+    .text{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        opacity:0;
+        align-items: center;
+        justify-content: center;
+        background:rgba(0,0,0,.7);
+        transition: opacity 300ms ease;
+        border-radius:4px;
+    }
+`

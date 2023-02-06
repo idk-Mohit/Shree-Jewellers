@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "./index";
+import { Button, Map } from "../UI/index";
 
 const SignUpSection = () => {
   const [checked, setChecked] = useState(false);
@@ -51,13 +51,7 @@ const SignUpSection = () => {
           </div>
         </form>
       </LeftSignUpDiv>
-      <AddressMap>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11779.228226902611!2d77.21375271973137!3d28.63019654968136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1646113643639!5m2!1sen!2sin"
-          title="map"
-          loading="lazy"
-        ></iframe>
-      </AddressMap>
+      <Map />
     </SignUp>
   );
 };
@@ -65,10 +59,9 @@ const SignUpSection = () => {
 export default SignUpSection;
 
 const SignUp = styled.div`
-  min-height: 50rem;
-  max-width: 60rem;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 50% auto;
   grid-gap: 1rem;
   padding: 5rem 0;
   @media (max-width: 768px) {
@@ -76,12 +69,6 @@ const SignUp = styled.div`
   }
 `;
 
-const AddressMap = styled.div`
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-`;
 const LeftSignUpDiv = styled.div`
   background: rgba(0, 0, 0, 0.8);
   padding: 4rem;
@@ -94,20 +81,20 @@ const LeftSignUpDiv = styled.div`
     align-items: center;
     margin: 1rem 0;
     input {
+      width: 100%;
       margin: 0 0.5rem 0.5rem 0;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
       transition: 300ms ease;
       &:hover,
       &:active,
       &:focus {
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
-        transform: scale(1.02);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
         transition: 300ms ease;
       }
     }
     button {
       margin: 0;
-      padding: 1.5rem;
+      padding: 1rem 1.5rem;
     }
   }
   .checkbox_label {
